@@ -1,3 +1,4 @@
+
 <head>
   <meta charset="utf-8" />
   {{ with .Site.LanguageCode }}
@@ -5,6 +6,27 @@
   {{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  {{/* https://icon-sets.iconify.design/mdi/lightbulb-night/ */}}
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  {{/* Check color scheme: https://www.ditdot.hr/en/dark-mode-website-tutorial */}}
+  <script>
+    window.onload = function(){
+      const d2l_button = document.querySelector(".btn.dark-to-light");
+      const l2d_button = document.querySelector(".btn.light-to-dark");
+
+      if (darkModeState) {
+        var d2l_disp = "";
+        var l2d_disp = "none";
+      } else {
+        var d2l_disp = "none";
+        var l2d_disp = "";
+      }
+
+      if (d2l_button) d2l_button.style.display = d2l_disp;
+      if (l2d_button) l2d_button.style.display = l2d_disp;
+    };
+  </script>
+  <script src="{{ "/js/toggle.js" | urlize | relURL }}"></script>
   {{/* Title */}}
   {{ if .IsHome -}}
     <title>{{ .Site.Title }}</title>

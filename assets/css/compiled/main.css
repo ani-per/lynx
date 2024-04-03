@@ -1258,12 +1258,12 @@ video {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-@media (prefers-color-scheme: dark) {
+.dark-mode {
   .prose .chroma {
-    --tw-bg-opacity: 1;
-    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-    --tw-text-opacity: 1;
-    color: rgb(229 231 235 / var(--tw-text-opacity));
+      --tw-bg-opacity: 100%;
+      --tw-text-opacity: 100%;
+      background-color: color-mix(in srgb, #374151 var(--tw-bg-opacity), transparent calc(100% - var(--tw-bg-opacity)));
+      color: color-mix(in srgb, #e5e7eb var(--tw-text-opacity), transparent calc(100% - var(--tw-text-opacity)));
   }
 }
 
@@ -1435,27 +1435,12 @@ video {
   line-height: 1.75rem;
 }
 
-.text-neutral-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.text-neutral-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.text-neutral-800 {
+.title {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-.text-neutral-900 {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-@media (prefers-color-scheme: dark) {
+.dark-mode {
   .dark\:prose-invert {
     --tw-prose-body: var(--tw-prose-invert-body);
     --tw-prose-headings: var(--tw-prose-invert-headings);
@@ -1504,28 +1489,6 @@ video {
   text-decoration-color: #c084fc;
 }
 
-@media (prefers-color-scheme: dark) {
-  .dark\:bg-neutral-800 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-  }
-
-  .dark\:text-neutral-400 {
-    --tw-text-opacity: 1;
-    color: rgb(156 163 175 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-neutral-500 {
-    --tw-text-opacity: 1;
-    color: rgb(107 114 128 / var(--tw-text-opacity));
-  }
-
-  .dark\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-}
-
 @media (min-width: 640px) {
   .sm\:min-w-0 {
     min-width: 0px;
@@ -1554,4 +1517,12 @@ video {
     padding-left: 8rem;
     padding-right: 8rem;
   }
+}
+
+/* Buttons */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
 }

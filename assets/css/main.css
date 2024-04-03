@@ -11,11 +11,10 @@
 
 /* Links */
 .link {
-  @apply text-white bg-primary-700 hover:brightness-90;
+  @apply text-main bg-primary-700 hover:brightness-90;
 }
 
 .link-amazon {
-  @apply text-neutral-900;
   background-color: #ff9900;
 }
 .link-apple {
@@ -59,7 +58,6 @@
   background-color: #33a0ff;
 }
 .link-kickstarter {
-  @apply text-neutral-900;
   background-color: #06ce78;
 }
 .link-lastfm {
@@ -96,7 +94,6 @@
   background-color: #4a154b;
 }
 .link-snapchat {
-  @apply text-neutral-900;
   background-color: #fffc00;
 }
 .link-soundcloud {

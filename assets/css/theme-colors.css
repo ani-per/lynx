@@ -1,0 +1,38 @@
+/* Light and dark themes */
+/* https://github.com/jpanther/lynx/blob/dev/assets/css/compiled/main.css */
+/* https://zwbetz.com/use-hugo-templating-in-your-external-css/ */
+
+/* Light theme */
+
+.bg-main {
+  --tw-bg-opacity: 90%;
+  background-color: color-mix(in srgb, {{ .Site.Params.light.bgColor | default "white" }} var(--tw-bg-opacity), transparent calc(100% - var(--tw-bg-opacity)));
+}
+
+.text-main {
+  --tw-text-opacity: 100%;
+  color: color-mix(in srgb, {{ .Site.Params.light.mainTextColor | default "black" }} var(--tw-text-opacity), transparent calc(100% - var(--tw-text-opacity)));
+}
+
+.text-alt {
+  --tw-text-opacity: 75%;
+  color: color-mix(in srgb, {{ .Site.Params.light.altTextColor | default "black" }} var(--tw-text-opacity), transparent calc(100% - var(--tw-text-opacity)));
+}
+
+.dark-mode {
+  .bg-main {
+    --tw-bg-opacity: 90%;
+    background-color: color-mix(in srgb, {{ .Site.Params.dark.bgColor | default "black" }} var(--tw-bg-opacity), transparent calc(100% - var(--tw-bg-opacity)));
+  }
+
+  .text-main {
+    --tw-text-opacity: 100%;
+    color: color-mix(in srgb, {{ .Site.Params.dark.mainTextColor | default "white" }} var(--tw-text-opacity), transparent calc(100% - var(--tw-text-opacity)));
+  }
+
+  .text-alt {
+    --tw-text-opacity: 75%;
+    color: color-mix(in srgb, {{ .Site.Params.dark.altTextColor | default "white" }} var(--tw-text-opacity), transparent calc(100% - var(--tw-text-opacity)));
+  }
+}
+

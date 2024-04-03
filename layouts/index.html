@@ -20,11 +20,11 @@
           src="{{ $src }}"
         />
       {{ end }}
-      <h1 class="text-4xl font-extrabold dark:text-white">
+      <h1 class="text-4xl font-extrabold title text-main">
         {{ .Params.title | default .Site.Params.Author.name | default .Site.Title | emojify }}
       </h1>
       {{ with .Site.Params.Author.headline }}
-        <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
+        <h2 class="text-xl headline text-alt">
           {{ . | markdownify | emojify }}
         </h2>
       {{ end }}
@@ -64,5 +64,12 @@
         {{ end }}
       </div>
     {{ end }}
+    {{ if .Site.Params.toggle | default false }}
+      <button class="btn light-to-dark" title="Switch to dark mode"><iconify-icon icon="mdi:lightbulb-night-outline"></iconify-icon></button>
+      <button class="btn dark-to-light" title="Switch to light mode"><iconify-icon icon="mdi:lightbulb-night"></iconify-icon></button>
+    {{ end }}
   </article>
+  {{ $templateStyle := resources.Get "css/theme-colors.css" }}
+  {{ $style := $templateStyle | resources.ExecuteAsTemplate "css/main.css" . }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
 {{ end }}
