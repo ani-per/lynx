@@ -142,11 +142,11 @@ Use the `params.light` and `params.dark` parameter structures to configure the l
     mainTextColor = "#ffffff"
     altTextColor = "#ffffff"
 }
+```
 
 - `bgColor` = background color
 - `mainTextColor` = title and body text color
 - `altTextColor` = subtitle and footer text color
-```
 
 You can modify the colors further by referring to the above section on custom CSS.
 
