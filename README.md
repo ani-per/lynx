@@ -124,6 +124,32 @@ Let's make a custom link for FontAwesome using the FA flag as the link icon and 
 
 When the site is rebuilt, the new custom link will appear.
 
+### Light / Dark theme configuration
+
+The light-dark toggle is disabled by default. To turn it on, set `toggle = true` in `params`.
+
+Use the `params.light` and `params.dark` parameter structures to configure the light and dark mode theme:
+
+```toml
+[params]
+  toggle = true
+  [params.light]
+    bgColor = "#ffffff"
+    mainTextColor = "#000000"
+    altTextColor = "#000000"
+  [params.dark]
+    bgColor = "#000000"
+    mainTextColor = "#ffffff"
+    altTextColor = "#ffffff"
+}
+
+- `bgColor` = background color
+- `mainTextColor` = title and body text color
+- `altTextColor` = subtitle and footer text color
+```
+
+You can modify the colors further by referring to the above section on custom CSS.
+
 ---
 
 ## Contributing
